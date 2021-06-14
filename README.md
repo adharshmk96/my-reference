@@ -25,7 +25,7 @@ Postgres Reference
     - [4.3.1. BEGIN](#431-begin)
     - [4.3.2. COMMIT](#432-commit)
     - [4.3.3. ROLLBACK](#433-rollback)
-  - [COST](#cost)
+  - [4.4. COST](#44-cost)
 
 # 1. Select
 
@@ -217,12 +217,13 @@ Syntax
 - Use Rollback when transaction is in aborted state.
 
 
-## COST
-
-(#rand_page) * rand_page_cost (4.0) +
-(#seq_page) * seq_page_cost (1.0) +
-(#row) * cpu_tuple_cost (0.01) +
-(#index_row) * cpu_index_tuple_cost (0.005) +
-(#times func/op evaluated) * cpu_operator_cost (0.0025) 
+## 4.4. COST
 
 [Postgres query planning](https://www.postgresql.org/docs/13/runtime-config-query.html)
+
+- (#rand_page) * rand_page_cost (4.0) +
+- (#seq_page) * seq_page_cost (1.0) +
+- (#row) * cpu_tuple_cost (0.01) +
+- (#index_row) * cpu_index_tuple_cost (0.005) +
+- (#times func/op evaluated) * cpu_operator_cost (0.0025) 
+
