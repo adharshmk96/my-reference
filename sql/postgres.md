@@ -25,7 +25,10 @@ Postgres Reference
     - [4.3.1. BEGIN](#431-begin)
     - [4.3.2. COMMIT](#432-commit)
     - [4.3.3. ROLLBACK](#433-rollback)
+  - [Operations](#operations)
   - [4.4. COST](#44-cost)
+    - [Numbers in Explain](#numbers-in-explain)
+    - [Cost Estimation](#cost-estimation)
 
 # 1. Select
 
@@ -216,10 +219,30 @@ Syntax
 - Reverts all changes after begin and main data remain unaffected.
 - Use Rollback when transaction is in aborted state.
 
+## Operations
+
+- Index Scan
+- Hash
+- Sequential scan
+- Hash Join
 
 ## 4.4. COST
 
 [Postgres query planning](https://www.postgresql.org/docs/13/runtime-config-query.html)
+
+Use EXPLAIN ANALYZE query to get the planning information.
+
+### Numbers in Explain
+*eg1: cost=0.00..123.14*
+- first result / start time(first row) ".." total cost calculation time 
+
+*eg2: rows=123*
+- total number of rows estimated
+
+*eg3: width=12*
+- total column (bytes) estimated.
+
+### Cost Estimation
 
 - (#rand_page) * rand_page_cost (4.0) +
 - (#seq_page) * seq_page_cost (1.0) +
@@ -227,3 +250,6 @@ Syntax
 - (#index_row) * cpu_index_tuple_cost (0.005) +
 - (#times func/op evaluated) * cpu_operator_cost (0.0025) 
 
+
+
+psql commands [reference](https://www.postgresqltutorial.com/psql-commands/)
