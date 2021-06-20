@@ -17,7 +17,7 @@ Tuple - Individual rows from table.
   - [5.2. Index only scan](#52-index-only-scan)
   - [5.3. Sequential scan](#53-sequential-scan)
   - [5.4. Bitmap Scan](#54-bitmap-scan)
-  - [Index vs Bitmap scan](#index-vs-bitmap-scan)
+  - [5.5. Index vs Bitmap scan](#55-index-vs-bitmap-scan)
 - [6. Caching](#6-caching)
 
 **Fragmentation is more important in performance**
@@ -75,7 +75,7 @@ An index will be generated with mapping of heap. (avoid blocking production db o
 - index created with `create index index_name_idx on table(col);`
 - queried with `select col2 from table where col = {val}`
 
-## Index vs Bitmap scan  
+## 5.5. Index vs Bitmap scan  
 - index scan jumps to heap scan and index scan back and forth.
 - bitmap scan builds a bitmap and then executes bitmap-heap scan for all the pages.
 
