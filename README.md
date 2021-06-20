@@ -5,6 +5,7 @@ General concepts about DATABASES
 3. [Concurrency](https://github.com/adharshmk96/dbms-reference/blob/main/dbms/03-concurrency.md)
 4. [Partitioning & Sharding](https://github.com/adharshmk96/dbms-reference/blob/main/dbms/04-partitioning.md)
 5. [Replication](https://github.com/adharshmk96/dbms-reference/blob/main/dbms/05-replication.md)
+5. [Migration](https://github.com/adharshmk96/dbms-reference/blob/main/dbms/06-migration.md)
 6. [Practices](https://github.com/adharshmk96/dbms-reference/blob/main/dbms/practices.md)
 
 SQL reference with Postgresql queries
