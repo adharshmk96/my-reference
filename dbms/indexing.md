@@ -52,7 +52,7 @@ concurrently
 
 `create index concurrently index_name_idx on table(col);`
 
-An index will be generated with mapping of heap.
+An index will be generated with mapping of heap. (avoid blocking production db operations)
 
 # 5. Scans
 ## 5.1. Index scan

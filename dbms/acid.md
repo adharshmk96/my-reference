@@ -15,6 +15,7 @@ ACID Properties
 - A block of steps considered as a single unit of work.
 - Represents any change in the state of a database.
 
+Syntax:
 ```
 BEGIN [ WORK | TRANSACTION ] [ transaction_mode [, ...] ]
 
@@ -28,7 +29,14 @@ where transaction_mode is one of:
 
 COMMIT/ROLLBACK;
 ```
+eg: 
+```
+BEGIN ISOLATIOTION LEVEL REPEATABLE READ;
 
+...
+
+COMMIT;
+```
 ### 1.1. Commit 
 - Commit to database, or apply the changes.
 ### 1.2. Rollback
@@ -36,7 +44,7 @@ COMMIT/ROLLBACK;
 
 ## 2. Atomicity
 - If Transaction **fails** (crash, os shutdown...) the **state wont update** and the previous state will persist.
-- Uncommited transactions may not be persisted / permanently written.
+- Uncommited transactions are not permanently written.
 - _All steps in transaction must succeed, if one fails, rollback._
 
 ## 3. Isolation

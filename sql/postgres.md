@@ -29,6 +29,7 @@ Postgres Reference
   - [4.4. COST](#44-cost)
     - [Numbers in Explain](#numbers-in-explain)
     - [Cost Estimation](#cost-estimation)
+  - [WAL Files](#wal-files)
 
 # 1. Select
 
@@ -250,6 +251,8 @@ Use EXPLAIN ANALYZE query to get the planning information.
 - (#index_row) * cpu_index_tuple_cost (0.005) +
 - (#times func/op evaluated) * cpu_operator_cost (0.0025) 
 
+## WAL Files
+- Any transaction is written to this file first.
 
 
 psql commands [reference](https://www.postgresqltutorial.com/psql-commands/)
